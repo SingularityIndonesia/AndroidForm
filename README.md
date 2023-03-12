@@ -14,7 +14,7 @@ allprojects {
 }
   
 dependencies {
-    implementation 'com.github.stefanusayudha:android_form:1.0.0'
+    implementation 'com.github.SingularityIndonesia:AndroidForm:1.0.0'
 }
 
 ```
