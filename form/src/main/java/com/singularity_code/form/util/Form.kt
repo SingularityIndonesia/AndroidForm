@@ -9,7 +9,7 @@ import com.singularity_code.form.pattern.Form
 import com.singularity_code.form.pattern.FormItem
 import com.singularity_code.form.pattern.FormRule
 
-class FormImpl(
+data class FormImpl(
     override val id: String
 ) : Form {
     private val _formItems = hashMapOf<ID, FormItem<*>>()

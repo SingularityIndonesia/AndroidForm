@@ -7,12 +7,15 @@ package com.singularity_code.form.util
 
 import com.singularity_code.form.pattern.FormRule
 
+data class FormRuleImpl<T>(
+    override val errorMessage: String,
+    override val rule: (T) -> Boolean
+) : FormRule<T>
 
-fun<T> formRule(
+fun <T> formRule(
     errorMessage: String,
     rule: (T) -> Boolean
-) = object : FormRule<T> {
-    override val errorMessage: String = errorMessage
-    override val rule: (T) -> Boolean = rule
-
-}
+) = FormRuleImpl(
+    errorMessage = errorMessage,
+    rule = rule
+)

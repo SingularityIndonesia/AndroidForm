@@ -7,8 +7,7 @@ package com.singularity_code.form.util
 
 import com.singularity_code.form.pattern.FormItem
 
-
-class FormItemImpl<T>(
+data class FormItemImpl<T>(
     /** ID item for serialization **/
     override val id: String,
 

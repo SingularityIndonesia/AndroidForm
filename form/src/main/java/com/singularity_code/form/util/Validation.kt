@@ -7,12 +7,14 @@ package com.singularity_code.form.util
 
 sealed class ValidationStatus<T>
 
-class Invalid<T>(
+data class Invalid<T>(
     val msg: String
 ) : ValidationStatus<T>()
 
-class Valid<T>(
+data class Valid<T>(
     val value: T
 ) : ValidationStatus<T>()
 
-class Unset<T> : ValidationStatus<T>()
+data class Unset<T>(
+    private val value: Any? = null
+) : ValidationStatus<T>()
