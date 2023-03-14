@@ -3,6 +3,35 @@ package com.singularity_code.form.pattern
 import com.singularity_code.form.util.ID
 import com.singularity_code.form.util.ValidationStatus
 
+/**
+ * Implement this pattern as a contract for class that provide a form.
+ * ex:
+ * ```
+ * class FragmentA : FormProvider {
+ *
+ *  private val _form by lazy {
+ *      form("userForm").apply{
+ *
+ *          // add item and rule
+ *          ...
+ *
+ *      }
+ *  }
+ *
+ *  override fun getForm(): Form = _form
+ *
+ *  override fun onCreateView(savedInstance: Bundle) {
+ *      super.onCreateView(savedInstance)
+ *
+ *      // this action will automatically bind to getForm().onValidationResult(..)
+ *      onValidationResult{ formItem ->
+ *          ...
+ *      }
+ *  }
+ *
+ * }
+ * ```
+ */
 interface FormProvider: Form {
     fun getForm() : Form
 
